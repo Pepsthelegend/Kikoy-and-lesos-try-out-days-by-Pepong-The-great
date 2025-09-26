@@ -1,0 +1,100 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+export default function KikoyLesoHomepage() {
+  return (
+    <div className="bg-neutral-950 text-white min-h-screen font-sans">
+      {/* Hero Section */}
+      <section className="relative h-screen flex flex-col justify-center items-center text-center px-6">
+        <h1 className="text-6xl md:text-7xl font-serif tracking-tight mb-4">
+          Kikoy & Leso
+        </h1>
+        <p className="text-lg md:text-xl text-neutral-400 max-w-xl mb-6">
+          Vintage luxury, reimagined through Swahili coast elegance.
+        </p>
+        <Button className="bg-white text-black rounded-2xl px-6 py-3 text-lg hover:bg-neutral-200 transition">
+          Shop Collection
+        </Button>
+      </section>
+
+      {/* Featured Collection */}
+      <section className="py-20 px-6 max-w-7xl mx-auto">
+        <h2 className="text-4xl font-serif mb-12 text-center">
+          The Upcycled Linen Series
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[1, 2, 3, 4].map((i) => (
+            <Card key={i} className="bg-neutral-900 rounded-2xl overflow-hidden shadow-lg">
+              <CardContent className="p-0">
+                <a href={`/product/${i}`}>
+                  <img
+                    src={`https://picsum.photos/600/800?random=${i}`}
+                    alt="Kikoy & Leso Shirt"
+                    className="w-full h-96 object-cover hover:opacity-80 transition"
+                  />
+                </a>
+                <div className="p-4">
+                  <h3 className="text-xl font-medium mb-1 font-serif">
+                    Upcycled Kikoy Shirt {i}
+                  </h3>
+                  <p className="text-neutral-400 text-sm mb-2">
+                    Linen base with hand-stitched Kikoy details.
+                  </p>
+                  <p className="text-lg font-semibold">KES 7,500</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Product Detail Page (Mockup) */}
+      <section className="py-20 px-6 max-w-6xl mx-auto border-t border-neutral-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Product Image */}
+          <div>
+            <img
+              src="https://picsum.photos/800/1000?random=10"
+              alt="Upcycled Kikoy Shirt Detail"
+              className="w-full rounded-2xl object-cover shadow-lg"
+            />
+          </div>
+
+          {/* Product Info */}
+          <div className="flex flex-col justify-center">
+            <h2 className="text-5xl font-serif mb-4">Upcycled Kikoy Shirt</h2>
+            <p className="text-neutral-400 text-lg mb-6 leading-relaxed">
+              A timeless luxury shirt crafted from upcycled linen, featuring
+              authentic Kikoy fabric hand-stitched into the side panels. A piece
+              that honors Swahili coast artistry while embracing modern
+              minimalism.
+            </p>
+            <p className="text-2xl font-semibold mb-6">KES 7,500</p>
+            <Button className="bg-white text-black rounded-2xl px-6 py-3 text-lg hover:bg-neutral-200 transition mb-4">
+              Add to Cart
+            </Button>
+            <p className="text-sm text-neutral-500">
+              Free shipping in Kenya • Worldwide shipping available
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 px-6 bg-neutral-900 text-center">
+        <h2 className="text-4xl font-serif mb-6">Our Story</h2>
+        <p className="max-w-3xl mx-auto text-neutral-400 text-lg leading-relaxed">
+          Kikoy & Leso is a celebration of heritage and craftsmanship. Each piece
+          is upcycled with precision, blending vintage fabrics with Swahili coast
+          artistry. Our vision is to create timeless garments that honor culture
+          and luxury in equal measure.
+        </p>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 text-center text-neutral-500 text-sm">
+        © {new Date().getFullYear()} Kikoy & Leso. All rights reserved.
+      </footer>
+    </div>
+  );
+}
